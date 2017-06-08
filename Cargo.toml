@@ -1,0 +1,13 @@
+[package]
+name = "orisei"
+version = "0.1.0"
+authors = ["Thomas Hertleif <thomas@hertleif.de>"]
+
+[dependencies]
+clap = "2.24.2"
+prettytable-rs = "^0.6"
+
+[[bin]]
+name = "orisei"
+path = "src/main.rs"
+doc = false
