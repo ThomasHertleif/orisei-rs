@@ -2,7 +2,6 @@ extern crate clap;
 extern crate orisei;
 
 use clap::{Arg, App};
-use std::fs::{self, DirEntry};
 
 fn main() {
     let matches = App::new("Orisei")
@@ -28,11 +27,13 @@ fn main() {
                         .arg(Arg::with_name("INPUT")
                             .help("Set input files or folder")
                             .required(true)
-                            .last(true))
+                            // .last(true)
+                            )
                         .get_matches();
 
     if let Some(input) = matches.value_of("INPUT") {
         println!("Value for output: {}", input);
+        orisei::read_dir(input);
     }
 
     if let Some(replace) = matches.value_of("replace") {
